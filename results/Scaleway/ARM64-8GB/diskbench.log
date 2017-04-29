@@ -1,0 +1,236 @@
+$ date
+Sat Apr 29 19:41:03 UTC 2017
+
+$ fio "/root/serverbench/scripts/ssd.fio"
+seq-read: (g=0): rw=read, bs=4K-4K/4K-4K/4K-4K, ioengine=libaio, iodepth=4
+rand-read: (g=1): rw=randread, bs=4K-4K/4K-4K/4K-4K, ioengine=libaio, iodepth=4
+seq-write: (g=2): rw=write, bs=4K-4K/4K-4K/4K-4K, ioengine=libaio, iodepth=4
+rand-write: (g=3): rw=randwrite, bs=4K-4K/4K-4K/4K-4K, ioengine=libaio, iodepth=4
+fio-2.2.10
+Starting 4 processes
+seq-read: Laying out IO file(s) (1 file(s) / 1024MB)
+
+seq-read: (groupid=0, jobs=1): err= 0: pid=9063: Sat Apr 29 19:43:02 2017
+  read : io=1024.0MB, bw=45048KB/s, iops=11261, runt= 23277msec
+    slat (usec): min=9, max=16912, avg=75.39, stdev=71.43
+    clat (usec): min=114, max=17034, avg=271.84, stdev=91.48
+     lat (usec): min=252, max=17184, avg=350.03, stdev=112.10
+    clat percentiles (usec):
+     |  1.00th=[  165],  5.00th=[  262], 10.00th=[  266], 20.00th=[  266],
+     | 30.00th=[  266], 40.00th=[  266], 50.00th=[  266], 60.00th=[  266],
+     | 70.00th=[  270], 80.00th=[  286], 90.00th=[  298], 95.00th=[  306],
+     | 99.00th=[  382], 99.50th=[  402], 99.90th=[  430], 99.95th=[  450],
+     | 99.99th=[ 1720]
+    bw (KB  /s): min=42440, max=45312, per=100.00%, avg=45051.48, stdev=462.37
+    lat (usec) : 250=3.72%, 500=96.26%, 750=0.01%, 1000=0.01%
+    lat (msec) : 2=0.01%, 4=0.01%, 10=0.01%, 20=0.01%
+  cpu          : usr=14.81%, sys=84.96%, ctx=547, majf=0, minf=23
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=262144/w=0/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+rand-read: (groupid=1, jobs=1): err= 0: pid=9064: Sat Apr 29 19:43:02 2017
+  read : io=1024.0MB, bw=44097KB/s, iops=11024, runt= 23779msec
+    slat (usec): min=11, max=3741, avg=76.40, stdev=52.63
+    clat (usec): min=118, max=4210, avg=277.51, stdev=32.00
+     lat (usec): min=261, max=4253, avg=356.56, stdev=56.35
+    clat percentiles (usec):
+     |  1.00th=[  171],  5.00th=[  270], 10.00th=[  270], 20.00th=[  274],
+     | 30.00th=[  274], 40.00th=[  274], 50.00th=[  274], 60.00th=[  274],
+     | 70.00th=[  274], 80.00th=[  278], 90.00th=[  302], 95.00th=[  306],
+     | 99.00th=[  398], 99.50th=[  406], 99.90th=[  434], 99.95th=[  450],
+     | 99.99th=[  700]
+    bw (KB  /s): min=43744, max=44224, per=100.00%, avg=44103.32, stdev=98.83
+    lat (usec) : 250=2.33%, 500=97.65%, 750=0.01%, 1000=0.01%
+    lat (msec) : 2=0.01%, 4=0.01%, 10=0.01%
+  cpu          : usr=15.24%, sys=84.58%, ctx=385, majf=0, minf=22
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=262144/w=0/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+seq-write: (groupid=2, jobs=1): err= 0: pid=9065: Sat Apr 29 19:43:02 2017
+  write: io=1024.0MB, bw=35914KB/s, iops=8978, runt= 29197msec
+    slat (usec): min=12, max=736, avg=39.13, stdev=10.62
+    clat (usec): min=115, max=29146, avg=399.05, stdev=121.75
+     lat (usec): min=240, max=29198, avg=440.43, stdev=121.51
+    clat percentiles (usec):
+     |  1.00th=[  314],  5.00th=[  354], 10.00th=[  370], 20.00th=[  378],
+     | 30.00th=[  390], 40.00th=[  394], 50.00th=[  394], 60.00th=[  402],
+     | 70.00th=[  414], 80.00th=[  418], 90.00th=[  438], 95.00th=[  450],
+     | 99.00th=[  474], 99.50th=[  486], 99.90th=[  516], 99.95th=[  556],
+     | 99.99th=[ 1832]
+    bw (KB  /s): min=34640, max=37016, per=100.00%, avg=35929.10, stdev=814.31
+    lat (usec) : 250=0.01%, 500=99.75%, 750=0.21%, 1000=0.01%
+    lat (msec) : 2=0.01%, 4=0.01%, 10=0.01%, 50=0.01%
+  cpu          : usr=14.78%, sys=40.50%, ctx=65552, majf=0, minf=21
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=0/w=262144/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+rand-write: (groupid=3, jobs=1): err= 0: pid=9066: Sat Apr 29 19:43:02 2017
+  write: io=1024.0MB, bw=31159KB/s, iops=7789, runt= 33652msec
+    slat (usec): min=15, max=678, avg=39.89, stdev=10.40
+    clat (usec): min=157, max=539362, avg=465.23, stdev=2247.85
+     lat (usec): min=302, max=539406, avg=507.32, stdev=2247.90
+    clat percentiles (usec):
+     |  1.00th=[  374],  5.00th=[  390], 10.00th=[  410], 20.00th=[  422],
+     | 30.00th=[  438], 40.00th=[  442], 50.00th=[  446], 60.00th=[  458],
+     | 70.00th=[  466], 80.00th=[  482], 90.00th=[  506], 95.00th=[  516],
+     | 99.00th=[  564], 99.50th=[  580], 99.90th=[  644], 99.95th=[  724],
+     | 99.99th=[ 3792]
+    bw (KB  /s): min= 2994, max=33688, per=100.00%, avg=31250.45, stdev=3957.54
+    lat (usec) : 250=0.01%, 500=87.43%, 750=12.52%, 1000=0.02%
+    lat (msec) : 2=0.01%, 4=0.01%, 10=0.01%, 20=0.01%, 50=0.01%
+    lat (msec) : 250=0.01%, 750=0.01%
+  cpu          : usr=11.95%, sys=37.40%, ctx=65566, majf=0, minf=20
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued    : total=r=0/w=262144/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+
+Run status group 0 (all jobs):
+   READ: io=1024.0MB, aggrb=45047KB/s, minb=45047KB/s, maxb=45047KB/s, mint=23277msec, maxt=23277msec
+
+Run status group 1 (all jobs):
+   READ: io=1024.0MB, aggrb=44096KB/s, minb=44096KB/s, maxb=44096KB/s, mint=23779msec, maxt=23779msec
+
+Run status group 2 (all jobs):
+  WRITE: io=1024.0MB, aggrb=35913KB/s, minb=35913KB/s, maxb=35913KB/s, mint=29197msec, maxt=29197msec
+
+Run status group 3 (all jobs):
+  WRITE: io=1024.0MB, aggrb=31159KB/s, minb=31159KB/s, maxb=31159KB/s, mint=33652msec, maxt=33652msec
+
+Disk stats (read/write):
+  vda: ios=524288/524095, merge=0/23, ticks=76204/152668, in_queue=225756, util=80.98%
+
+$ sysbench --test=fileio --file-total-size=6G prepare
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+128 files, 49152Kb each, 6144Mb total
+Creating files for the test...
+
+$ sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw  --max-time=300 --max-requests=0 --file-extra-flags=direct run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Extra file open flags: 65536
+128 files, 48Mb each
+6Gb total file size
+Block size 16Kb
+Number of random requests for random IO: 0
+Read/Write ratio for combined random IO test: 1.50
+Periodic FSYNC enabled, calling fsync() each 100 requests.
+Calling fsync() at the end of test, Enabled.
+Using synchronous I/O mode
+Doing random r/w test
+Threads started!
+Time limit exceeded, exiting...
+Done.
+
+Operations performed:  329789 Read, 219860 Write, 703488 Other = 1253137 Total
+Read 5.0322Gb  Written 3.3548Gb  Total transferred 8.387Gb  (28.627Mb/sec)
+ 1832.15 Requests/sec executed
+
+Test execution summary:
+    total time:                          300.0028s
+    total number of events:              549649
+    total time taken by event execution: 154.3822
+    per-request statistics:
+         min:                                  0.21ms
+         avg:                                  0.28ms
+         max:                                 17.14ms
+         approx.  95 percentile:               0.37ms
+
+Threads fairness:
+    events (avg/stddev):           549649.0000/0.00
+    execution time (avg/stddev):   154.3822/0.00
+
+
+$ sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw --max-time=300 --file-fsync-all --max-requests=0 --num-threads=8 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 8
+
+Extra file open flags: 0
+128 files, 48Mb each
+6Gb total file size
+Block size 16Kb
+Number of random requests for random IO: 0
+Read/Write ratio for combined random IO test: 1.50
+Calling fsync() after each write operation.
+Using synchronous I/O mode
+Doing random r/w test
+Threads started!
+Time limit exceeded, exiting...
+(last message repeated 7 times)
+Done.
+
+Operations performed:  896139 Read, 597433 Write, 597433 Other = 2091005 Total
+Read 13.674Gb  Written 9.1161Gb  Total transferred 22.79Gb  (77.789Mb/sec)
+ 4978.50 Requests/sec executed
+
+Test execution summary:
+    total time:                          300.0043s
+    total number of events:              1493572
+    total time taken by event execution: 2396.7672
+    per-request statistics:
+         min:                                  0.01ms
+         avg:                                  1.60ms
+         max:                                323.64ms
+         approx.  95 percentile:               4.14ms
+
+Threads fairness:
+    events (avg/stddev):           186696.5000/1274.66
+    execution time (avg/stddev):   299.5959/0.01
+
+
+$ sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw --max-time=300 --file-fsync-all --max-requests=0 --num-threads=64 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 64
+
+Extra file open flags: 0
+128 files, 48Mb each
+6Gb total file size
+Block size 16Kb
+Number of random requests for random IO: 0
+Read/Write ratio for combined random IO test: 1.50
+Calling fsync() after each write operation.
+Using synchronous I/O mode
+Doing random r/w test
+Threads started!
+Time limit exceeded, exiting...
+(last message repeated 63 times)
+Done.
+
+Operations performed:  2057753 Read, 1371899 Write, 1371899 Other = 4801551 Total
+Read 31.399Gb  Written 20.934Gb  Total transferred 52.332Gb  (178.62Mb/sec)
+11431.62 Requests/sec executed
+
+Test execution summary:
+    total time:                          300.0146s
+    total number of events:              3429652
+    total time taken by event execution: 19184.5453
+    per-request statistics:
+         min:                                  0.01ms
+         avg:                                  5.59ms
+         max:                                349.65ms
+         approx.  95 percentile:              14.45ms
+
+Threads fairness:
+    events (avg/stddev):           53588.3125/415.20
+    execution time (avg/stddev):   299.7585/0.04
+
+
+$ sysbench --test=fileio --file-total-size=6G cleanup
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Removing test files...
