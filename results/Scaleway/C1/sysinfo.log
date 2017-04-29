@@ -1,0 +1,57 @@
+$ date
+Sat Apr 29 17:21:41 UTC 2017
+
+$ sudo lshw
+scw-5dc39b
+    description: ARMv7 Processor rev 2 (v7l)
+    product: Scaleway - C1 Computing
+    width: 32 bits
+  *-core
+       description: Motherboard
+       physical id: 0
+       capabilities: marvell_axp-db marvell_armadaxp-mv78460 marvell_armadaxp marvell_armada-370-xp
+     *-cpu:0
+          description: CPU
+          product: cpu
+          physical id: 0
+          bus info: cpu@0
+          size: 1333MHz
+          capacity: 1333MHz
+          capabilities: half thumb fastmult vfp edsp thumbee vfpv3 tls idiva idivt vfpd32 lpae cpufreq
+     *-cpu:1
+          description: CPU
+          product: cpu
+          physical id: 1
+          bus info: cpu@1
+          size: 1333MHz
+          capacity: 1333MHz
+          capabilities: half thumb fastmult vfp edsp thumbee vfpv3 tls idiva idivt vfpd32 lpae cpufreq
+     *-cpu:2
+          description: CPU
+          product: cpu
+          physical id: 2
+          bus info: cpu@2
+          size: 1333MHz
+          capacity: 1333MHz
+          capabilities: half thumb fastmult vfp edsp thumbee vfpv3 tls idiva idivt vfpd32 lpae cpufreq
+     *-cpu:3
+          description: CPU
+          product: cpu
+          physical id: 3
+          bus info: cpu@3
+          size: 1333MHz
+          capacity: 1333MHz
+          capabilities: half thumb fastmult vfp edsp thumbee vfpv3 tls idiva idivt vfpd32 lpae cpufreq
+     *-memory
+          description: System memory
+          physical id: 4
+          size: 2020MiB
+  *-network
+       description: Ethernet interface
+       physical id: 1
+       logical name: eth0
+       serial: 00:07:cb:03:50:d5
+       size: 1Gbit/s
+       capacity: 1Gbit/s
+       capabilities: ethernet physical tp mii 1000bt 1000bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=mvneta driverversion=1.0 duplex=full ip=10.1.22.129 link=yes multicast=yes port=MII speed=1Gbit/s
