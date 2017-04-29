@@ -17,6 +17,7 @@ sudo apt-get install sysbench lshw mariadb-server
 ./scripts/cpubench.sh | tee cpubench.log
 ./scripts/diskbench.sh | tee diskbench.log
 ./scripts/mysqlbench.sh | tee mysqlbench.log
+./scripts/networkbench.sh | tee networkbench.log
 ```
 
 

@@ -47,8 +47,8 @@ echo "$ sysbench --test=oltp --oltp-table-size=1000000 --mysql-db=benchmark --my
 sysbench --test=oltp --oltp-table-size=1000000 --mysql-db=benchmark --mysql-user=root --mysql-password=123456 --max-time=60 --oltp-read-only=on --max-requests=0 --num-threads=8 run
 
 echo ""
-echo "$ sysbench --test=oltp --oltp-table-size=10000000 --mysql-db=sysbench --mysql-user=root --mysql-password=123456 --max-time=60 --max-requests=0 --num-threads=16 --oltp-reconnect-mode=random run"
-sysbench --test=oltp --oltp-table-size=10000000 --mysql-db=sysbench --mysql-user=root --mysql-password=123456 --max-time=60 --max-requests=0 --num-threads=16 --oltp-reconnect-mode=random run
+echo "$ sysbench --test=oltp --oltp-table-size=10000000 --mysql-db=benchmark --mysql-user=root --mysql-password=123456 --max-time=60 --max-requests=0 --num-threads=16 --oltp-reconnect-mode=random run"
+sysbench --test=oltp --oltp-table-size=10000000 --mysql-db=benchmark --mysql-user=root --mysql-password=123456 --max-time=60 --max-requests=0 --num-threads=16 --oltp-reconnect-mode=random run
 
 echo ""
 echo "$ sysbench --test=oltp --mysql-db=benchmark --mysql-user=root --mysql-password=123456 cleanup"
