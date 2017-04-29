@@ -1,0 +1,74 @@
+$ date
+Sat Apr 29 15:56:43 UTC 2017
+
+$ sysbench --test=memory --memory-block-size=1K --memory-scope=global --memory-total-size=100G --memory-oper=read run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing memory operations speed test
+Memory block size: 1K
+
+Memory transfer size: 102400M
+
+Memory operations type: read
+Memory scope type: global
+Threads started!
+Done.
+
+Operations performed: 104857600 (1624717.33 ops/sec)
+
+102400.00 MB transferred (1586.64 MB/sec)
+
+
+Test execution summary:
+    total time:                          64.5390s
+    total number of events:              104857600
+    total time taken by event execution: 46.2976
+    per-request statistics:
+         min:                                  0.00ms
+         avg:                                  0.00ms
+         max:                                  0.34ms
+         approx.  95 percentile:               0.00ms
+
+Threads fairness:
+    events (avg/stddev):           104857600.0000/0.00
+    execution time (avg/stddev):   46.2976/0.00
+
+
+$ sysbench --test=memory --memory-block-size=1K --memory-scope=global --memory-total-size=100G --memory-oper=write run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing memory operations speed test
+Memory block size: 1K
+
+Memory transfer size: 102400M
+
+Memory operations type: write
+Memory scope type: global
+Threads started!
+Done.
+
+Operations performed: 104857600 (1192167.88 ops/sec)
+
+102400.00 MB transferred (1164.23 MB/sec)
+
+
+Test execution summary:
+    total time:                          87.9554s
+    total number of events:              104857600
+    total time taken by event execution: 69.6653
+    per-request statistics:
+         min:                                  0.00ms
+         avg:                                  0.00ms
+         max:                                  0.18ms
+         approx.  95 percentile:               0.00ms
+
+Threads fairness:
+    events (avg/stddev):           104857600.0000/0.00
+    execution time (avg/stddev):   69.6653/0.00
+
