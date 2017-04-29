@@ -1,0 +1,110 @@
+$ date
+Sat Apr 29 17:03:35 UTC 2017
+
+$ mysql -V
+mysql  Ver 15.1 Distrib 10.0.29-MariaDB, for debian-linux-gnu (aarch64) using readline 5.2
+
+$ mysql -u root -p -e "create database benchmark;"
+
+$ sysbench --test=oltp --oltp-table-size=1000000 --mysql-db=benchmark --mysql-user=root --mysql-password=123456 prepare
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+No DB drivers specified, using mysql
+Creating table 'sbtest'...
+Creating 1000000 records in table 'sbtest'...
+
+$ sysbench --test=oltp --oltp-table-size=1000000 --mysql-db=benchmark --mysql-user=root --mysql-password=123456 --max-time=60 --oltp-read-only=on --max-requests=0 --num-threads=8 run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+No DB drivers specified, using mysql
+Running the test with following options:
+Number of threads: 8
+
+Doing OLTP test.
+Running mixed OLTP test
+Doing read-only test
+Using Special distribution (12 iterations,  1 pct of values are returned in 75 pct cases)
+Using "BEGIN" for starting transactions
+Using auto_inc on the id column
+Threads started!
+Time limit exceeded, exiting...
+(last message repeated 7 times)
+Done.
+
+OLTP test statistics:
+    queries performed:
+        read:                            193340
+        write:                           0
+        other:                           27620
+        total:                           220960
+    transactions:                        13810  (230.10 per sec.)
+    deadlocks:                           0      (0.00 per sec.)
+    read/write requests:                 193340 (3221.40 per sec.)
+    other operations:                    27620  (460.20 per sec.)
+
+Test execution summary:
+    total time:                          60.0174s
+    total number of events:              13810
+    total time taken by event execution: 479.8740
+    per-request statistics:
+         min:                                 15.45ms
+         avg:                                 34.75ms
+         max:                                 92.06ms
+         approx.  95 percentile:              43.89ms
+
+Threads fairness:
+    events (avg/stddev):           1726.2500/16.63
+    execution time (avg/stddev):   59.9842/0.01
+
+
+$ sysbench --test=oltp --oltp-table-size=10000000 --mysql-db=benchmark --mysql-user=root --mysql-password=123456 --max-time=60 --max-requests=0 --num-threads=16 --oltp-reconnect-mode=random run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+No DB drivers specified, using mysql
+Running the test with following options:
+Number of threads: 16
+
+Doing OLTP test.
+Running mixed OLTP test
+Using Special distribution (12 iterations,  1 pct of values are returned in 75 pct cases)
+Using "BEGIN" for starting transactions
+Using auto_inc on the id column
+Threads started!
+Time limit exceeded, exiting...
+(last message repeated 15 times)
+Done.
+
+OLTP test statistics:
+    queries performed:
+        read:                            63238
+        write:                           22585
+        other:                           34777
+        total:                           120600
+    transactions:                        4485   (74.48 per sec.)
+    deadlocks:                           32     (0.53 per sec.)
+    read/write requests:                 85823  (1425.28 per sec.)
+    other operations:                    34777  (577.55 per sec.)
+
+Test execution summary:
+    total time:                          60.2148s
+    total number of events:              4485
+    total time taken by event execution: 960.8727
+    per-request statistics:
+         min:                                 20.64ms
+         avg:                                214.24ms
+         max:                               1040.39ms
+         approx.  95 percentile:             495.16ms
+
+Threads fairness:
+    events (avg/stddev):           280.3125/12.96
+    execution time (avg/stddev):   60.0545/0.06
+
+
+$ sysbench --test=oltp --mysql-db=benchmark --mysql-user=root --mysql-password=123456 cleanup
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+No DB drivers specified, using mysql
+Dropping table 'sbtest'...
+Done.
+
+$ mysql -u root -p -e "drop database benchmark;"

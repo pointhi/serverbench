@@ -1,0 +1,62 @@
+$ date
+Sat Apr 29 16:37:52 UTC 2017
+
+$ sudo lshw
+scw-b9a5e1
+    description: Computer
+    width: 64 bits
+  *-core
+       description: Motherboard
+       physical id: 0
+       capabilities: linux_dummy-virt
+     *-cpu:0
+          description: CPU
+          product: cpu
+          physical id: 0
+          bus info: cpu@0
+          capabilities: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics
+     *-cpu:1
+          description: CPU
+          product: cpu
+          physical id: 1
+          bus info: cpu@1
+          capabilities: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics
+     *-memory
+          description: System memory
+          physical id: 2
+          size: 1994MiB
+     *-pci
+          description: Host bridge
+          product: Red Hat, Inc.
+          vendor: Red Hat, Inc.
+          physical id: 100
+          bus info: pci@0000:00:00.0
+          version: 00
+          width: 32 bits
+          clock: 33MHz
+        *-network
+             description: Ethernet interface
+             product: Virtio network device
+             vendor: Red Hat, Inc
+             physical id: 1
+             bus info: pci@0000:00:01.0
+             logical name: eth0
+             version: 00
+             serial: de:19:88:08:40:18
+             width: 64 bits
+             clock: 33MHz
+             capabilities: bus_master cap_list rom ethernet physical
+             configuration: autonegotiation=off broadcast=yes driver=virtio_net driverversion=1.0.0 ip=10.10.31.47 latency=0 link=yes multicast=yes
+             resources: irq:47 ioport:f040(size=32) memory:3ee00000-3ee03fff memory:fffc0000-ffffffff
+        *-scsi
+             description: SCSI storage controller
+             product: Virtio block device
+             vendor: Red Hat, Inc
+             physical id: 2
+             bus info: pci@0000:00:02.0
+             version: 00
+             width: 64 bits
+             clock: 33MHz
+             capabilities: scsi bus_master cap_list
+             configuration: driver=virtio-pci latency=0
+             resources: irq:48 ioport:f000(size=64) memory:3ee04000-3ee07fff
