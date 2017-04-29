@@ -31,6 +31,10 @@ echo "$ date"
 date
 
 echo ""
+echo "$ mysql -V"
+mysql -V
+
+echo ""
 echo "$ mysql -u root -p -e \"create database benchmark;\""
 mysql -u root -p -e "create database benchmark;"
 

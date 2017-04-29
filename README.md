@@ -6,7 +6,7 @@ some benchmark results, to check out how different (cloud) servers behave
 ### Install dependencies
 
 ```
-sudo apt-get install sysbench lshw
+sudo apt-get install sysbench lshw mariadb-server
 ```
 
 
