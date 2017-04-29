@@ -43,15 +43,15 @@ sysbench --test=fileio --file-total-size=6G prepare
 
 echo ""
 echo "$ sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw  --max-time=300 --max-requests=0 --file-extra-flags=direct run"
-sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw --max-time=300 --max-requests=0 --file-extra-flags=direct run
+sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw --max-time=300 --file-extra-flags=direct --max-requests=0 run
 
 echo ""
 echo "$ sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw --max-time=300 --file-fsync-all --max-requests=0 --num-threads=8 run"
-sysbench --test=fileio --file-total-size=20G --file-test-mode=rndrw --max-time=240 --file-fsync-all --max-requests=0 --num-threads=8 run
+sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw --max-time=300 --file-fsync-all --max-requests=0 --num-threads=8 run
 
 echo ""
 echo "$ sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw --max-time=300 --file-fsync-all --max-requests=0 --num-threads=64 run"
-sysbench --test=fileio --file-total-size=20G --file-test-mode=rndrw --max-time=240 --file-fsync-all --max-requests=0 --num-threads=64 run
+sysbench --test=fileio --file-total-size=6G --file-test-mode=rndrw --max-time=300 --file-fsync-all --max-requests=0 --num-threads=64 run
 
 echo ""
 echo "$ sysbench --test=fileio --file-total-size=6G cleanup"
